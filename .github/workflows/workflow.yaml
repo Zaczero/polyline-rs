@@ -60,7 +60,7 @@ jobs:
       - name: Assert tag name matches version
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         run: |
-          nix-shell --pure --run "uv tree 2>&1 | grep -o 'polyline-rs v.*' | sed 's/polyline-rs v//' > version.txt"
+          nix-shell --run "uv tree 2>&1 | grep -o 'polyline-rs v.*' | sed 's/polyline-rs v//' > version.txt"
           version=$(cat version.txt)
           tag_name=${{ github.ref_name }}
           if [ "$version" != "$tag_name" ]; then
@@ -70,7 +70,7 @@ jobs:
 
       - name: Run tests
         run: |
-          nix-shell --pure --run run-tests
+          nix-shell --run run-tests
 
       - name: Export Nix store cache
         if: steps.nix-cache.outputs.cache-hit != 'true'
