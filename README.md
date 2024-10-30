@@ -4,7 +4,9 @@
 [![Liberapay Patrons](https://shields.monicz.dev/liberapay/patrons/Zaczero?logo=liberapay&label=Patrons)](https://liberapay.com/Zaczero/)
 [![GitHub Sponsors](https://shields.monicz.dev/github/sponsors/Zaczero?logo=github&label=Sponsors&color=%23db61a2)](https://github.com/sponsors/Zaczero)
 
-Fast Google Encoded Polyline encoding & decoding in Rust. A Python PyO3 wrapper for [polyline](https://crates.io/crates/polyline) with out-of-the-box support for both (lat, lon) and (lon, lat) coordinates.
+Fast Google Encoded Polyline encoding & decoding in Rust. A Python PyO3 library with out-of-the-box support for both (lat, lon) and (lon, lat) coordinates.
+
+[Encoded Polyline Algorithm Format](https://developers.google.com/maps/documentation/utilities/polylinealgorithm)
 
 ## Installation
 

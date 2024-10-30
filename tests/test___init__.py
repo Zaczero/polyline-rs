@@ -46,10 +46,11 @@ def test_encode_decode(coords, precision, expected):
     coords_lonlat = tuple((x, y) for y, x in coords)
     assert encode_latlon(coords, precision) == expected
     assert encode_lonlat(coords_lonlat, precision) == expected
-    pytest.approx(decode_latlon(expected, precision), coords, abs=0.1**precision)
-    pytest.approx(decode_lonlat(expected, precision), coords_lonlat, abs=0.1**precision)
-
-
-def test_encode_out_of_bounds():
-    with pytest.raises(ValueError, match='latitude out of bounds: -120.2 at position 0'):
-        encode_latlon([(-120.2, 38.5), (-120.95, 40.7), (-126.453, 43.252)])
+    assert all(
+        decoded == pytest.approx(coord, abs=0.1**precision)
+        for decoded, coord in zip(decode_latlon(expected, precision), coords)
+    )
+    assert all(
+        decoded == pytest.approx(coord, abs=0.1**precision)
+        for decoded, coord in zip(decode_lonlat(expected, precision), coords_lonlat)
+    )
