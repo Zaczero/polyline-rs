@@ -1,8 +1,8 @@
-{ isDevelopment ? true }:
+{}:
 
 let
   # Update packages with `nixpkgs-update` command
-  pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/0fcb98acb6633445764dafe180e6833eb0f95208.tar.gz") { };
+  pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/4989a246d7a390a859852baddb1013f825435cee.tar.gz") { };
 
   packages' = with pkgs; [
     coreutils
@@ -29,7 +29,7 @@ let
     '')
   ];
 
-  shell' = with pkgs; lib.optionalString isDevelopment ''
+  shell' = with pkgs; ''
     export PYTHONNOUSERSITE=1
     export TZ=UTC
 

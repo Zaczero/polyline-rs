@@ -119,7 +119,7 @@ fn decode_latlon(polyline: &str, precision: i32) -> Vec<(f64, f64)> {
     _decode(polyline, precision, true)
 }
 
-#[pymodule]
+#[pymodule(gil_used = false)]
 #[pyo3(name = "_lib")]
 fn lib(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(encode_lonlat, m)?)?;

@@ -3,7 +3,7 @@ authors = [{ name = "Kamil Monicz", email = "kamil@monicz.dev" }]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: The Unlicense (Unlicense)",
+  "License :: OSI Approved :: Zero-Clause BSD (0BSD)",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -17,7 +17,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = []
-description = "Fast Google Encoded Polyline encoding & decoding in Rust"
+description = "Fast Google Encoded Polyline encoding & decoding"
 dynamic = ["version"]
 keywords = [
   "decoding",
